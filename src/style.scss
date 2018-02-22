@@ -1,0 +1,126 @@
+*{
+  box-sizing: border-box;
+}
+
+html, body, .main, .app{
+  width: 100%;
+  height: 100%;
+  padding:0;
+  margin:0;
+}
+
+.main{
+  background-color: #fafafa;
+}
+
+form, fieldset{
+  border: none;
+  width: 100%;
+  padding:0;
+  margin:0;
+}
+
+
+#login-container{
+  margin: 0 auto;
+  padding:50px 0;
+  width: 400px;
+  text-align: center;
+  @media(max-width: 400px){
+    padding: 50px 0 0 0;
+    width: 100%;
+  }
+  img.logo{
+    width: 200px;
+  }
+  .login-form-container{
+    .message{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      color: #ff3d00;
+      padding: 0 20px;
+      text-align: left;
+    }
+  }
+
+  .login-form{
+    background-color: white;
+    border: 1px solid #ddd;
+    padding:0;
+    margin:30px 0 0 0;
+    text-align: left;
+    box-shadow: 0 0 5px 5px #f8f8f8;
+    border-radius: 3px;
+    overflow:hidden;
+
+    .password-input, .email-input{
+      .message{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        color: #ff3d00;
+        padding: 0 20px;
+        height: 30px;
+        margin-bottom: -10px;
+      }
+    }
+    .password-input .message{
+      margin-bottom: 0px;
+    }
+
+    .remember{
+      font-family: 'Montserrat', sans-serif;
+      color: gray;
+      display: inline-block;
+      padding: 20px 0 5px 20px;
+      cursor: pointer;
+      .login-remember-checkbox{
+        margin-right: 10px;
+      }
+    }
+
+    @media(max-width: 400px){
+      border-right: 0;
+      border-left: 0;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      margin:30px 0 0 0;
+      border-radius: 0;
+    }
+    label{
+      font-family: 'Montserrat', sans-serif;
+      color: gray;
+      display: inline-block;
+      padding: 20px 0 5px 20px;
+    }
+
+    input{
+      font-family: 'Montserrat', sans-serif;
+      color: #4285f4;
+      margin:0;
+      width: 100%;
+      border: none;
+      background-color: white;
+      padding: 10px 20px;
+    }
+    .login-button{
+      font-family: 'Montserrat', sans-serif;
+      width: 100%;
+      outline: 0;
+      *{
+        outline: 0;
+      }
+      border: none;
+      padding: 10px 20px;
+      display:block;
+      font-size: 16px;
+      margin: 10px 0 0 0;
+      background-color: #4285f4;
+      height: 50px;
+      color: white;
+      &:hover{
+        background-color: #3355b9;
+        cursor: pointer;
+      }
+    }
+  }
+}
