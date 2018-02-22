@@ -7,8 +7,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha",
-    "build": "webpack -w"
+    "test": "mocha -r test/helpers/browser.js --ui bdd test/**/*.test.js",
+    "dev": "webpack -w",
+    "install": "webpack",
+    "start": "node app"
   },
   "author": "Mateusz Russak",
   "license": "MIT",
