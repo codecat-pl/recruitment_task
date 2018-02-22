@@ -5,6 +5,8 @@ import sinon from 'sinon';
 chai.should();
 import EmailInput from "../../src/elements/email_input";
 import PasswordInput from "../../src/elements/password_input";
+import RememberMe from "../../src/elements/rememberme";
+import SubmitButtom from "../../src/elements/submit_button";
 import {LoginForm} from "../../src/elements/login_form";
 
 describe('<LoginForm/>', ()=>{
@@ -43,10 +45,10 @@ describe('<LoginForm/>', ()=>{
     });
 
     it('should call submitLogin when login button clicked', ()=>{
-        const {submit, submitLogin} = setup();
+        const {submitButton, submitLogin} = setup();
         const preventDefault = sinon.spy();
         const stopPropagation = sinon.spy();
-        submit.simulate('click', {preventDefault, stopPropagation});
+        submitButton.simulate('click',{stopPropagation, preventDefault});
         submitLogin.calledOnce.should.equal(true);
         preventDefault.calledOnce.should.equal(true);
         stopPropagation.calledOnce.should.equal(true);
@@ -75,6 +77,8 @@ function setup(statePatch = {}){
         state,
         passwordInput: Element.find(PasswordInput),
         emailInput: Element.find(EmailInput),
-        submit: Element.find('.login-button'),
+        submitButton: Element.find(SubmitButtom),
+        rememberMe: Element.find(RememberMe),
+        form: Element.find('.login-form'),
     }
 }

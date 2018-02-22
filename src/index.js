@@ -10,13 +10,6 @@ import thunk from 'redux-thunk';
 import reducers from './reducers';
 import App from './components/app';
 
-import fontawesome from '@fortawesome/fontawesome';
-import regular from '@fortawesome/fontawesome-free-regular';
-import brands from '@fortawesome/fontawesome-free-brands';
-
-fontawesome.library.add(regular);
-fontawesome.library.add(brands);
-
 let store = createStore(reducers, {
     login:{
         email: {value: '', valid: true, message: ''},

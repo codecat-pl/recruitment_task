@@ -109,17 +109,34 @@ form, fieldset{
       *{
         outline: 0;
       }
+      transition: background-color 1s;
       border: none;
-      padding: 10px 20px;
-      display:block;
-      font-size: 16px;
+      padding: 15px 20px;
+      text-align: center;
+      vertical-align: middle;
+      //display:block;
+      display: inline-block;
+      font-size: 20px;
+      line-height: 20px;
       margin: 10px 0 0 0;
       background-color: #4285f4;
       height: 50px;
       color: white;
+      cursor: pointer;
+      &.error{
+        background-color: #f45a42;
+      }
+      &.ok{
+        background-color: #83f45f;
+      }
       &:hover{
         background-color: #3355b9;
-        cursor: pointer;
+        &.error{
+          background-color: #bb4533;
+        }
+        &.ok{
+          background-color: #59a540;
+        }
       }
     }
   }

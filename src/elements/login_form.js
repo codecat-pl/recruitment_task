@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import EmailInput from './email_input';
 import PasswordInput from './password_input';
 import RememberMe from './rememberme';
+import SubmitButton from './submit_button';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 import {setLoginEmail, setLoginPassword, setLoginRemember, submitLogin} from "../actions/login";
@@ -19,7 +20,7 @@ export class LoginForm extends Component{
     }
     render(){
         const {setLoginEmail, setLoginPassword, setLoginRemember} = this.props;
-        const {email, password, remember,message} = this.props.data;
+        const {email, password, remember,message, status} = this.props.data;
 
         return (
             <div className="login-form-container">
@@ -28,7 +29,7 @@ export class LoginForm extends Component{
                         <EmailInput {...email} name='email' onChange={mail=>setLoginEmail(mail)} />
                         <PasswordInput {...password} name='password' onChange={pass=>setLoginPassword(pass)} />
                         <RememberMe toggled={remember} onChange={val=>setLoginRemember(val)} />
-                        <input className="login-button" type="submit" value="login" onClick={ev=>this.submit(ev)} />
+                        <SubmitButton status={status} onClick={ev=>this.submit(ev)} />
                     </fieldset>
                 </form>
                 <div className="message">{message}</div>
