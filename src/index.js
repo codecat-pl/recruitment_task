@@ -10,13 +10,15 @@ import thunk from 'redux-thunk';
 import reducers from './reducers';
 import App from './components/app';
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 let store = createStore(reducers, {
     login:{
         email: {value: '', valid: true, message: ''},
         password: {value: '', valid: true, message: ''},
         valid: false,
     }
-}, applyMiddleware(thunk));
+}, composeEnhancers(applyMiddleware(thunk)));
 
 render(
     <Provider store={store}>

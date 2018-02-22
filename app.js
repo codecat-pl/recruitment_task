@@ -11,7 +11,7 @@ app.post('/login', (req,res)=>{
         res.json({status: 'ok', message: ''});
     }
     else {
-        res.json({status: 'ok', message: 'Wrong email or password!'});
+        res.json({status: 'error', message: 'Wrong email or password!'});
     }
 });
 
